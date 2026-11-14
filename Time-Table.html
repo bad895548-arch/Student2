@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Time Table</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial;
+            background: #f1f4f9;
+            margin: 0;
+        }
+        .container {
+            padding: 15px;
+          margin-top: 100px;
+        }
+
+        .box {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px #ccc;
+            overflow-x: auto;
+            
+        }
+
+        h2 {
+            color: #087cf0;
+            text-align: center;
+            
+        }
+
+        table {
+            width: 100%;
+            min-width: 600px;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 13px;
+            text-align: center;
+        }
+
+        th {
+            background: #087cf0;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background: #f1f4f9;
+        }
+
+        .break {
+            background: #ffe0a3;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="box">
+
+        <h2>📚 Class Time Table</h2>
+
+        <table>
+            <tr>
+                <th>Day</th>
+                <th>09-10 AM</th>
+                <th>10-11 AM</th>
+                <th>11-12 PM</th>
+                <th>12-01 PM</th>
+                <th>01-02 PM</th>
+            </tr>
+
+            <tr>
+                <td>Monday</td>
+                <td>English</td>
+                <td>Math</td>
+                <td>Science</td>
+                <td class="break">Lunch</td>
+                <td>Computer</td>
+            </tr>
+
+            <tr>
+                <td>Tuesday</td>
+                <td>Math</td>
+                <td>English</td>
+                <td>Computer</td>
+                <td class="break">Lunch</td>
+                <td>Science</td>
+            </tr>
+
+            <tr>
+                <td>Wednesday</td>
+                <td>Science</td>
+                <td>Math</td>
+                <td>English</td>
+                <td class="break">Lunch</td>
+                <td>Computer</td>
+            </tr>
+
+            <tr>
+                <td>Thursday</td>
+                <td>Computer</td>
+                <td>Science</td>
+                <td>Math</td>
+                <td class="break">Lunch</td>
+                <td>English</td>
+            </tr>
+
+            <tr>
+                <td>Friday</td>
+                <td>English</td>
+                <td>Computer</td>
+                <td>Science</td>
+                <td class="break">Lunch</td>
+                <td>Math</td>
+            </tr>
+
+            <tr>
+                <td>Saturday</td>
+                <td>Math</td>
+                <td>Science</td>
+                <td>Computer</td>
+                <td class="break">Lunch</td>
+                <td>Sports</td>
+            </tr>
+        </table>
+
+    </div>
+
+</div>
+</body>
+</html>

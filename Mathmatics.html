@@ -1,0 +1,341 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mathematics Explore</title>
+    <link rel="stylesheet" href="mathematics.css">
+</head>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6fc;
+    color: #222;
+}
+
+header {
+    background: #263c75;
+    color: white;
+    text-align: center;
+    padding: 35px 15px;
+}
+
+header p {
+    margin-top: 10px;
+}
+
+section {
+    background: white;
+    width: 92%;
+    max-width: 950px;
+    margin: 25px auto;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 3px 12px #00000010;
+}
+
+section h2 {
+    color: #263c75;
+    margin-bottom: 20px;
+}
+
+/* NUMBER GRID */
+
+.number-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.number {
+    background: #e5edff;
+    color: #263c75;
+    text-align: center;
+    padding: 12px 2px;
+    border-radius: 7px;
+    font-weight: bold;
+}
+
+/* CALCULATOR */
+
+.calculator-section {
+    text-align: center;
+}
+
+.calculator {
+    max-width: 350px;
+    margin: auto;
+    padding: 20px;
+    background: #17264c;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px #0003;
+}
+
+#display {
+    width: 100%;
+    height: 75px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    margin-bottom: 18px;
+    padding: 15px;
+    font-size: 30px;
+    text-align: right;
+    background: #eaf0ff;
+    color: #17264c;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.buttons button {
+    height: 58px;
+    border: none;
+    border-radius: 12px;
+    background: white;
+    color: #17264c;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.buttons button:active {
+    transform: scale(0.94);
+}
+
+.buttons .operator {
+    background: #ffad65;
+    color: white;
+}
+
+.buttons .special {
+    background: #b9c9ed;
+    color: #17264c;
+}
+
+.buttons .equal {
+    background: #28a878;
+    color: white;
+}
+
+/* FORMULAS */
+
+.formula {
+    background: #f5f7fc;
+    padding: 18px;
+    margin-top: 15px;
+    border-left: 4px solid #ff914d;
+    border-radius: 8px;
+}
+
+.formula h3 {
+    color: #263c75;
+    margin-bottom: 10px;
+}
+
+.formula p {
+    margin-top: 8px;
+    line-height: 1.5;
+}
+
+footer {
+    background: #263c75;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+@media(max-width: 600px) {
+    .number-grid {
+        grid-template-columns: repeat(10, 1fr);
+        gap: 4px;
+    }
+
+    .number {
+        padding: 9px 0;
+        font-size: 12px;
+    }
+
+    section {
+        padding: 15px;
+    }
+}
+
+</style>
+<body>
+
+<header>
+    <h1>Mathematics Explore</h1>
+    <p>Learn Numbers, Solve Problems & Explore Formulas</p>
+</header>
+
+<!-- NUMBERS 1 TO 100 -->
+<section>
+    <h2>🔢 Numbers 1 to 100</h2>
+    <p>Learn counting from 1 to 100.</p>
+    <div class="number-grid" id="numbers"></div>
+</section>
+
+<!-- PROBLEM SOLVING CALCULATOR -->
+<section class="calculator-section">
+    <h2>🧮 Math Problem Solver</h2>
+
+    <div class="calculator">
+
+        <input type="text" id="display"
+        placeholder="0" readonly>
+
+        <div class="buttons">
+
+            <button class="special" onclick="clearDisplay()">AC</button>
+            <button class="special" onclick="deleteLast()">DEL</button>
+            <button class="operator" onclick="addValue('%')">%</button>
+            <button class="operator" onclick="addValue('/')">÷</button>
+
+            <button onclick="addValue('7')">7</button>
+            <button onclick="addValue('8')">8</button>
+            <button onclick="addValue('9')">9</button>
+            <button class="operator" onclick="addValue('*')">×</button>
+
+            <button onclick="addValue('4')">4</button>
+            <button onclick="addValue('5')">5</button>
+            <button onclick="addValue('6')">6</button>
+            <button class="operator" onclick="addValue('-')">−</button>
+
+            <button onclick="addValue('1')">1</button>
+            <button onclick="addValue('2')">2</button>
+            <button onclick="addValue('3')">3</button>
+            <button class="operator" onclick="addValue('+')">+</button>
+
+            <button onclick="addValue('00')">00</button>
+            <button onclick="addValue('0')">0</button>
+            <button onclick="addValue('.')">.</button>
+            <button class="equal" onclick="calculate()">=</button>
+
+        </div>
+    </div>
+</section>
+
+<!-- MATHEMATICS FORMULAS -->
+<section>
+    <h2>📐 Mathematics Formulas</h2>
+
+    <div class="formula">
+        <h3>Square</h3>
+        <p>Area = Side × Side</p>
+        <p>Perimeter = 4 × Side</p>
+    </div>
+
+    <div class="formula">
+        <h3>Rectangle</h3>
+        <p>Area = Length × Breadth</p>
+        <p>Perimeter = 2 × (Length + Breadth)</p>
+    </div>
+
+    <div class="formula">
+        <h3>Triangle</h3>
+        <p>Area = ½ × Base × Height</p>
+        <p>Perimeter = Sum of all sides</p>
+    </div>
+
+    <div class="formula">
+        <h3>Circle</h3>
+        <p>Area = π × Radius × Radius</p>
+        <p>Circumference = 2 × π × Radius</p>
+    </div>
+
+    <div class="formula">
+        <h3>Percentage</h3>
+        <p>Percentage = (Value ÷ Total) × 100</p>
+    </div>
+
+    <div class="formula">
+        <h3>Speed</h3>
+        <p>Speed = Distance ÷ Time</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Mathematics Learning</p>
+</footer>
+
+<script>
+  
+// NUMBERS 1 TO 100
+
+let numberBox = document.getElementById("numbers");
+
+for (let i = 1; i <= 100; i++) {
+
+    let box = document.createElement("div");
+
+    box.className = "number";
+    box.innerText = i;
+
+    numberBox.appendChild(box);
+}
+
+
+// CALCULATOR
+
+let display = document.getElementById("display");
+
+function addValue(value) {
+    display.value += value;
+}
+
+function clearDisplay() {
+    display.value = "";
+}
+
+function deleteLast() {
+    display.value = display.value.slice(0, -1);
+}
+
+function calculate() {
+
+    let expression = display.value;
+
+    if (expression === "") {
+        return;
+    }
+
+    try {
+
+        if (!/^[0-9+\-*/%.() ]+$/.test(expression)) {
+            display.value = "Error";
+            return;
+        }
+
+        expression = expression.replace(
+            /(\d+(?:\.\d+)?)%/g,
+            "($1/100)"
+        );
+
+        let answer = Function(
+            '"use strict"; return (' + expression + ')'
+        )();
+
+        if (!Number.isFinite(answer)) {
+            display.value = "Error";
+        } else {
+            display.value = Number(answer.toFixed(8)).toString();
+        }
+
+    } catch (error) {
+        display.value = "Error";
+    }
+}
+
+</script>
+
+</body>
+</html>

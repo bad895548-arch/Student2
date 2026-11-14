@@ -1,0 +1,438 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Education Center</title>
+    <link rel="stylesheet" href="education.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+  <style>
+    
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fffdf8;
+    color: #243047;
+}
+
+/* Header */
+
+.header {
+    padding: 22px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h2 {
+    font-size: 28px;
+    color: #263b80;
+}
+
+.header h2 span {
+    color: #ff8b42;
+}
+
+.header p {
+    color: #777;
+    font-size: 14px;
+}
+
+/* Hero */
+
+.hero {
+    margin: 15px 5%;
+    padding: 55px 7%;
+    border-radius: 25px;
+    background: #e9f0ff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 350px;
+}
+
+.tag, .section-heading span,
+.journey-text span {
+    color: #ff8b42;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: 43px;
+    line-height: 1.2;
+    color: #263b80;
+    margin: 18px 0;
+}
+
+.hero p {
+    color: #667085;
+    line-height: 1.7;
+    max-width: 430px;
+    margin-bottom: 25px;
+}
+
+.btn {
+    display: inline-block;
+    background: #ff8b42;
+    color: white;
+    padding: 13px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero-image {
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    background: #d5e2ff;
+    display: grid;
+    place-items: center;
+    position: relative;
+    margin: 20px;
+}
+
+.circle {
+    font-size: 100px;
+}
+
+.float-book {
+    position: absolute;
+    bottom: 5px;
+    left: -20px;
+    font-size: 45px;
+}
+
+.float-star {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    font-size: 35px;
+}
+
+/* Subjects */
+
+.subjects, .study {
+    padding: 65px 7%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-heading h2 {
+    font-size: 30px;
+    color: #263b80;
+    margin: 12px 0;
+}
+
+.section-heading p {
+    color: #777;
+}
+
+.subject-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.subject-card {
+    padding: 27px 20px;
+    border-radius: 16px;
+    transition: 0.3s;
+}
+
+.subject-card:hover {
+    transform: translateY(-8px);
+}
+
+.math { background: #fff0dd; }
+.science { background: #e1f6ec; }
+.english { background: #f0eaff; }
+.computer { background: #e3f1ff; }
+
+.subject-icon {
+    font-size: 43px;
+    margin-bottom: 18px;
+}
+
+.subject-card h3 {
+    margin-bottom: 12px;
+    font-size: 20px;
+}
+
+.subject-card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+ a {
+    color: #263b80;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* Journey */
+
+.journey {
+    margin: 20px 5%;
+    padding: 45px 7%;
+    background: #273b7a;
+    color: white;
+    border-radius: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.journey-text h2 {
+    font-size: 32px;
+    margin: 15px 0;
+}
+
+.journey-text p {
+    color: #dce3ff;
+    line-height: 1.7;
+    max-width: 450px;
+    margin-bottom: 20px;
+}
+
+.journey-icon {
+    font-size: 100px;
+}
+
+/* Study Corner */
+
+.study-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.study-list a {
+    background: white;
+    padding: 23px;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px #0000000c;
+    text-decoration: none;
+    color: #263b80;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.study-list span {
+    color: #ff8b42;
+    font-size: 13px;
+}
+
+/* Footer */
+
+footer {
+    background: #182957;
+    color: white;
+    text-align: center;
+    padding: 35px 15px;
+    line-height: 2;
+}
+
+footer p {
+    color: #c7d1ed;
+    font-size: 13px;
+}
+
+/* Responsive */
+
+@media(max-width: 850px) {
+    .subject-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+}
+
+@media(max-width: 550px) {
+    .header {
+        padding: 18px;
+    }
+
+    .header p {
+        font-size: 11px;
+    }
+
+    .hero {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 35px 25px;
+    }
+
+    .hero-image {
+        align-self: center;
+        width: 180px;
+        height: 180px;
+    }
+
+    .circle {
+        font-size: 75px;
+    }
+
+    .subject-list,
+    .study-list {
+        grid-template-columns: 1fr;
+    }
+
+    .journey {
+        padding: 30px 22px;
+    }
+
+    .journey-icon {
+        font-size: 55px;
+    }
+
+    .journey-text h2 {
+        font-size: 25px;
+    }
+}
+
+  </style>
+<body>
+
+<header class="header">
+    <h2>Edu<span>World.</span></h2>
+    <p>Knowledge Makes You Powerful</p>
+</header>
+
+<!-- Hero Section -->
+
+<section class="hero">
+    <div class="hero-text">
+        <span class="tag">LEARN SOMETHING NEW</span>
+        <h1>Explore The World<br>Of Education</h1>
+        <p>
+            Discover new subjects, improve your knowledge
+            and build a better future through learning.
+        </p>
+        <a href="#subjects" class="btn">Explore Subjects →</a>
+    </div>
+
+    <div class="hero-image">
+        <div class="circle">📚</div>
+        <div class="float-book">📖</div>
+        <div class="float-star">⭐</div>
+    </div>
+</section>
+
+<!-- Subject Explorer -->
+
+<section class="subjects" id="subjects">
+
+    <div class="section-heading">
+        <span>KNOWLEDGE ZONE</span>
+        <h2>Explore Your Subjects</h2>
+        <p>Choose your favourite subject and start learning.</p>
+    </div>
+
+    <div class="subject-list">
+
+            <a href="Mathmatics.html">
+        <div class="subject-card math">
+            <div class="subject-icon">📐</div>
+            <h3>Mathematics</h3>
+            <p>Numbers, formulas and problem solving.</p>
+              Explore Subject →
+        </div>
+            </a>
+
+            <a href="Science.html">
+        <div class="subject-card science">
+            <div class="subject-icon">🔬</div>
+            <h3>Science</h3>
+            <p>Discover nature and scientific facts.</p>
+              Explore Subject →
+        </div>
+            </a>
+
+            <a href="English.html">
+        <div class="subject-card english">
+            <div class="subject-icon">📖</div>
+            <h3>English</h3>
+            <p>Improve grammar and communication.</p>
+              Explore Subject →
+        </div>
+            </a>
+
+            <a href="Computer.html">
+        <div class="subject-card computer">
+            <div class="subject-icon">💻</div>
+            <h3>Computer</h3>
+            <p>Learn technology and programming.</p>
+              Explore Subject →
+        </div>
+            </a>
+
+    </div>
+</section>
+
+<!-- Learning Journey -->
+
+<section class="journey">
+    <div class="journey-text">
+        <span>YOUR FUTURE STARTS HERE</span>
+        <h2>Learning Today,<br>Leading Tomorrow.</h2>
+        <p>
+            Education gives you the power to achieve
+            your dreams. Keep learning and keep growing.
+        </p>
+        <a href="materials.html" class="btn">Start Learning</a>
+    </div>
+
+    <div class="journey-icon">🎓</div>
+</section>
+
+<!-- Study Corner -->
+
+<section class="study">
+    <div class="section-heading">
+        <span>STUDY CORNER</span>
+        <h2>Learning Resources</h2>
+    </div>
+
+    <div class="study-list">
+
+        <a href="https://www.selfstudys.com/">📒 <b>Study Notes</b>
+        <span>Read Notes →</span></a>
+
+        <a href="books.html">📚 <b>E-Books</b>
+        <span>View Books →</span></a>
+
+        <a href="quiz.html">🧠 <b>Online Quiz</b>
+        <span>Take Quiz →</span></a>
+
+        <a href="syllabus.html">📋 <b>Syllabus</b>
+        <span>View Syllabus →</span></a>
+
+    </div>
+</section>
+
+<footer>
+    <h2>EduWorld.</h2>
+    <p>Learn More. Achieve More.</p>
+    <p>© 2026 EduWorld. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

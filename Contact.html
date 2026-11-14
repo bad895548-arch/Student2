@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+  <style>
+    
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #eef2f7;
+}
+
+.container {
+    display: flex;
+    max-width: 950px;
+    margin: 50px auto;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px #ccc;
+}
+
+.left {
+    width: 40%;
+    background: #263f73;
+    color: white;
+    padding: 30px;
+}
+
+.right {
+    width: 60%;
+    padding: 30px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background: #263f73;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@media(max-width: 650px) {
+    .container {
+        flex-direction: column;
+        margin: 15px;
+    }
+
+    .left, .right {
+        width: 100%;
+    }
+}
+
+  </style>
+<body>
+
+<div class="container">
+
+    <div class="left">
+        <h1>Let's Talk</h1>
+        <p>We would love to hear from you.</p>
+
+        <h3>Contact Information</h3>
+        <p>📧 Email: hello@learnworld.com</p>
+        <p>📞 Phone: +91 9876543210</p>
+        <p>📍 Address: Odisha, India</p>
+
+        <h3>Our Working Hours</h3>
+        <p>Monday - Saturday</p>
+        <p>9:00 AM - 5:00 PM</p>
+    </div>
+
+    <div class="right">
+        <h2>Send a Message</h2>
+
+        <form id="contactForm">
+
+    <label>Name</label>
+    <input type="text" id="name" placeholder="Your name" required>
+
+    <label>Email</label>
+    <input type="email" placeholder="Your email" required>
+
+    <label>Phone Number</label>
+    <input type="tel" placeholder="Your phone number">
+
+    <label>Message</label>
+    <textarea rows="5" placeholder="Write your message..." required></textarea>
+
+    <button type="submit">Send Message</button>
+
+    <p id="result"></p>
+
+</form>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+
+    document.getElementById("result").innerHTML =
+        "Thank you " + name + "! Your message has been submitted.";
+
+    this.reset();
+});
+</script>
+    </div>
+
+</div>
+
+</body>
+</html>
